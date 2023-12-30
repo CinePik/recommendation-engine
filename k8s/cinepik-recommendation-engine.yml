@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cinepik-recommendation-engine-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cinepik-recommendation-engine
+  template:
+    metadata:
+      labels:
+        app: cinepik-recommendation-engine
+    spec:
+      containers:
+        - image: sebam/cinepik-recommendation-engine:latest
+          name: cinepik-recommendation-engine
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 3003
