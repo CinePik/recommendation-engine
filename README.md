@@ -15,6 +15,11 @@
 
 Node.js microservice for user specific content recommendations.
 
+## Documentation
+
+OpenAPI documentation available at [http://localhost:3003/api](http://localhost:3003/api).  
+For accessing secured endpoints add your `access_token` provided to you at login to the `Authorization` header.
+
 ## Installation
 
 ```bash
@@ -81,6 +86,15 @@ docker-compose down
 ```
 
 ## Kubernetes deployment
+
+### Setup configs
+
+Create a Secret for the Watch this API environment variable in the deployment file.
+Replace the value in the <> with the appropriate value. More info [here](https://rapidapi.com/vitalsx-apis-vitalsx-apis-default/api/watchthis).
+
+```bash
+kubectl create secret generic recommendation-credentials --from-literal=WATCH_THIS_RAPID_API_KEY=<REPLACE_ME>
+```
 
 ### Apply changes
 
