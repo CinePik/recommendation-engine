@@ -6,8 +6,6 @@ services:
     build: .
     ports:
       - ${NODE_PORT}:${NODE_PORT}
-    depends_on:
-      - db
     env_file:
       - .env
     networks:
