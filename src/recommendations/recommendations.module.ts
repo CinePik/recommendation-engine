@@ -1,8 +1,10 @@
+import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
-import { RecommendationsService } from './recommendations.service';
 import { RecommendationsController } from './recommendations.controller';
+import { RecommendationsService } from './recommendations.service';
 
 @Module({
+  imports: [HttpModule],
   controllers: [RecommendationsController],
   providers: [RecommendationsService],
 })
