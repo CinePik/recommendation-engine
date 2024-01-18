@@ -101,8 +101,8 @@ kubectl create secret generic recommendation-credentials --from-literal=WATCH_TH
 We can create the deployment and service.
 
 ```bash
-kubectl apply -f k8s/recommendation-engine.yml
-kubectl apply -f k8s/recommendation-engine-svc.yml
+kubectl apply -f k8s/cinepik-recommendation-engine.yml
+kubectl apply -f k8s/cinepik-recommendation-engine-svc.yml
 ```
 
 ### Other useful commands
