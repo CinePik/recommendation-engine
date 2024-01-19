@@ -14,6 +14,8 @@ async function bootstrap() {
     .setDescription('The Recommendation Engine microservice.')
     .setVersion(version)
     .addBearerAuth()
+    .addServer(`http://localhost:${port}`)
+    .addServer('http://cinepik.fun/recommendations')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('openapi', app, document);
